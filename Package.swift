@@ -21,23 +21,23 @@ let package = Package(
         .target(
             name: "CaptureSDK",
             dependencies: ["SKTCapture"],
+            path: "Sources",
             exclude: [
-                "CHANGELOG.md",
-                "LICENSE",
-                "SKTCapture.podspec",
-                "socketmobilepublickey.pem",
-                "Docs/Infoplist.jpg",
-                "buildscripts/updateVersion.py"
+                "CaptureSDK/CHANGELOG.md",
+                "CaptureSDK/LICENSE",
+                "CaptureSDK/SKTCapture.podspec",
+                "CaptureSDK/socketmobilepublickey.pem",
+                "CaptureSDK/Docs/Infoplist.jpg",
+                "CaptureSDK/buildscripts/updateVersion.py"
             ],
             resources: [
-                .copy("softScanBeep.wav"),
-                .copy("lib/SKTCapture.xcframework")
+                .copy("CaptureSDK/softScanBeep.wav"),
+                .copy("CaptureSDK/lib/SKTCapture.xcframework")
             ]
         ),
         .binaryTarget(
             name: "SKTCapture",
-            path: "lib/SKTCapture.xcframework"
+            path: "Sources/CaptureSDK/lib/SKTCapture.xcframework"
         ),
     ]
 )
-
